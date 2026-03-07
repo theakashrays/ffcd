@@ -1,0 +1,52 @@
+.usercp_nav_myalerts {
+    background: url('transmit_blue_3f475c9a_bf8129c8_067a51c3_aa5d54a2_d15b72f9_c6f264a2_8cd523f7_92b14cd4_fd828ad6_434d86ea_e8022e73_0e753e48_26e13425_cb24ab4e_c8d89ddd_966194d4_a69ca2d7_71897795_20e92909_4e1b74ac_bc761196_676db570_cc209303_1802923d_7cef8dae_5a45b626.png') no-repeat left center;
+}
+
+.usercp_nav_myalerts_delete_all {
+    background: url('delete_c9632d31_71b8b5ef_f073a0af_36fd4d2e_9ca7da1d_a68dbcc0_3d891758_14619708_03985d65_9ea62d34_dd034311_35820378_343df982_395bc08a_b7190c22_566f7d82_c75a4b8e_f6103c42_21c7eeb5_46a39e9f_052c4d5d_3f8b15f8_b74825b7_24830e48_7a79f5e3_c7679dac_0a3aa8f7.png') no-repeat left center;
+}
+
+.usercp_nav_myalerts_delete_read {
+    background: url('bin_9cb35ffd_b34c762e_4ec2dd31_cb1418d2_b5dc33b5_1d64e1dd_6d5dd270_4b6e6b6d_68536b64_83593f94_fa94d784_ac0329a1_c6cb8f28_ba785169_da903d82_1902cf02_d9599dfd_edc1a32f_dd7c80fc_0ddd138c_3e143318_ac3a5ce3_4b523512_978c2a59_2f01ba92_7843915b_431460c8.png') no-repeat left center;
+}
+
+ul.panel_links a.myalerts {
+    background-position: 0 -180px;
+}
+
+.alert-row__no-alerts td {
+    text-align: center;
+}
+
+.alert--read.alert > td >div { opacity: .2 }
+
+.alert.alert--read td.trow1 {
+    background-color: #F5F5F5;
+}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

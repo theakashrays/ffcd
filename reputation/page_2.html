@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<!-- start: reputation --><html id="reputation" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>OGU - Reputation Report for 9</title>
+<!-- start: headerinclude -->
+<link href="../assets/css3_c2423173.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/global_02b95af4.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/alerts_3acd75e5.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/ogusers_1d1c7c5b.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/login_b6728118.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/usertitles_575cdc4b.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/threadstyles_97ee73e9.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="text/javascript" http-equiv="Content-Script-Type"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#a4a4a4" name="theme-color"/>
+<link href="../assets/ogu_favicon_15a80e3a.png" rel="icon"/>
+<meta content="OGU" property="og:site_name"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="OGU" name="apple-mobile-web-app-title"/>
+<link href="../assets/ogu_favicon_15a80e3a.png" rel="apple-touch-icon"/>
+<style type="text/css">@font-face {font-family:Inter;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/inter/5.0.16/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/inter/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/inter/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/inter/5.0.16/greek/wght/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/inter/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/inter/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/inter/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}</style>
+<style type="text/css">@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/500/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/500/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/500/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/greek/500/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/500/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}</style>
+<link href="../assets/all.min_c4c107f0.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="../assets/brands.min_2e2ca03c.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+<style type="text/css">@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/400/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/500/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/600/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/latin/600/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/600/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:700;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:700;src:url(/cf-fonts/s/poppins/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:700;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/700/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}</style>
+<style type="text/css">@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/400/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}</style>
+<style type="text/css">@font-face {font-family:Orbitron;font-style:normal;font-weight:400;src:url(/cf-fonts/s/orbitron/5.0.18/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}</style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="text/javascript" http-equiv="Content-Script-Type"/>
+<script crossorigin="anonymous" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" referrerpolicy="no-referrer" src="../assets/jquery.min_91916b07.js" type="text/javascript"></script>
+<script src="../assets/jquery.plugins.min_22a0b629.js" type="text/javascript"></script>
+<script src="../assets/general.min_9b1e184f.js" type="text/javascript"></script>
+<!--[if lte IE 8]>
+<script src="https://oguser.com/jscripts/html5.js" type="text/javascript"></script>
+<![endif]-->
+<script type="text/javascript">
+<!--
+	var templates = {
+		modal: '<div class=\"modal\">\
+	<div style=\"overflow-y: auto; max-height: 400px;\">\
+		<table border=\"0\" cellspacing=\"0\" cellpadding=\"5\" class=\"tborder\">\
+			<tr>\
+				<td class=\"thead\" colspan=\"2\"><strong>__message__</strong></td>\
+			</tr>\
+			<tr>\
+				<td colspan=\"2\" class=\"trow1\">\
+				<div style=\"text-align: center\" class=\"modal_buttons\">__buttons__</div></td>\
+			</tr>\
+		</table>\
+	</div>\
+</div>',
+		modal_button: '<input type=\"submit\" class=\"button\" value=\"__title__\"/>&nbsp;'
+	};
+    var cookieDomain = ".oguser.com";
+    var cookiePath = "/";
+    var cookiePrefix = "ogu";
+    var cookieSecureFlag = "1";
+    var deleteevent_confirm = "Are you sure you want to delete this event?";
+    var removeattach_confirm = "Are you sure you want to remove the selected attachment from this post?";
+    var loading_text = 'Loading. <br />Please Wait&hellip;';
+    var saving_changes = 'Saving changes&hellip;';
+    var use_xmlhttprequest = "1";
+    var my_post_key = "add5ec2bd1fb59868b251939c8377b80";
+    var rootpath = "https://oguser.com";
+    var imagepath = "https://oguser.com/images";
+    var yes_confirm = "Yes";
+    var no_confirm = "No";
+    var MyBBEditor = null;
+    var spinner_image = "https://oguser.com/images/spinner.gif";
+    var spinner = "<img src='" + spinner_image +"' alt='' />";
+    var modal_zindex = 9999;
+
+// -->
+</script>
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-194841606-2');
+</script>
+<style>
+audio, canvas, embed, img, object, svg, video {
+display: initial !important;
+}
+#headerlogo {
+height:60px;
+}
+#headerlogomobile {
+height:40px;
+}
+
+.active, .accordion:hover {
+border: 0 !important;
+}
+
+
+.colfirst_2 {
+border-radius: 10px 0 0 0 !important;
+}
+.colfirst_24 {
+border-radius: 10px 0 0 10px !important;
+}
+.collast_2 {
+border-radius: 0 10px 0 0 !important;
+}
+.collast_24 {
+border-radius: 0 10px 10px 0 !important;
+}
+</style>
+<!-- end: headerinclude -->
+<script type="text/javascript">
+<!--
+	var delete_reputation_confirm = "Are you sure you wish to delete this reputation Rating?";
+// -->
+</script>
+<script src="../assets/report_2061ee55.js" type="text/javascript"></script>
+<style>
+		.card {
+	background-color: #141414;
+	max-width: 360px;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: 2rem;
+	box-shadow: 0px 1rem 1.5rem rgba(0,0,0,0.5);
+}
+		.col_row {
+			padding: 20px !important;
+			background: #212121 !important;
+		}
+		.card .banner {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 6rem;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	box-sizing: border-box;
+}
+		.avatar_card {
+	top: 40px;
+	position: relative;
+}
+		.avatar.avatar--m {
+	width: 96px;
+	height: 96px;
+	font-size: 58px;
+}
+		.avatar img:not(.cropImage) {
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	word-wrap: normal;
+	display: block;
+	border-radius: inherit;
+	width: 100%;
+	height: 100%;
+}
+		.card .menu {
+	width: 100%;
+	z-index: -1;
+	padding: 1rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+	position: relative;
+	box-sizing: border-box;
+}
+		.card .menu .opener {
+	width: 2.5rem;
+	height: 2.5rem;
+	position: relative;
+	border-radius: 50%;
+	transition: background-color 100ms ease-in-out;
+}
+		.card h2.name {
+	text-align: center;
+	padding: 0 2rem .5rem;
+	margin: 0;
+	margin-top: -20px;
+}
+		.card .actions {
+	padding: 0 2rem 1.2rem;
+	display: flex;
+	flex-direction: column;
+	order: 99;
+}
+		.card .actions .follow-info {
+	padding: 0 0 1rem;
+	display: flex;
+}
+	</style>
+<script>
+/* offline-fix: disable Barba.js, define missing scrollFunction */
+window.scrollFunction = function() {};
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove barba wrapper so Barba.js never initialises
+    var w = document.querySelector('[data-barba="wrapper"]');
+    if (w) { w.removeAttribute('data-barba'); w.removeAttribute('data-barba-namespace'); }
+    // Also nuke the barba global if it loaded
+    if (window.barba) { try { window.barba.destroy(); } catch(e) {} }
+});
+</script>
+</head>
+<body>
+<!-- start: header -->
+<div class="headertop"><div class="top-wrap"><!-- start: header_welcomeblock_guest -->
+<style>
+	.dropdown-content {
+    background-color: #171717;
+    width: 230px; border-radius: 2px;
+border-radius:8px;
+	right:0px;
+margin-top:5px;
+transition: 0.2s;
+}.dropdown-content a { border-bottom: 0px !important }
+.dropdown-content a:hover {
+    background-color: rgb(26, 26, 26); border-radius: 6px;
+transition: 0.2s;
+}
+
+
+@media only screen and (max-width: 1800px) {
+.hidemid {
+display:none;
+}
+}
+
+	.dropdown2 {
+  position: relative;
+  display: inline-block;
+transition: 0.2s;
+}
+.dropborder {
+border-radius:8px;
+}
+
+.headermember {
+background:#171717;border-radius:20px;padding:2px;margin-top:12px;
+}
+
+.dropdown2-content {
+  display: none;
+  position: absolute;
+  background-color: #171717;
+  border-radius: 10px;
+  min-width: 180px;
+  z-index: 1;
+  margin-top: 5px;
+transition: 0.2s;
+}
+	
+.menu1:hover {
+	background-color: #242424;
+	width: 100%;
+transition: 0.2s;
+	}
+
+.dropdown2:hover .dropdown2-content {
+  display: block;
+}
+	   </style>
+<div class="">
+<div class="responsivehide" id="over" style="margin-left: auto;margin-right: auto;display: block;position:absolute; width:100%; height:100%;margin-top: 10px;text-align:center;">
+<a href="/"><img alt="ogu logo" height="60px" id="headerlogo" src="../assets/ogu-logo_f85c883a.png"/></a>
+</div>
+<div class="responsiveshow" id="over" style="margin-left: auto;margin-right: auto;display: block;position:absolute; width:100%; height:100%;margin-top: 10px;">
+<a href="/"><img alt="ogu logo" height="27px" id="headerlogomobile" src="../assets/ogu-logo_f85c883a.png"/></a>
+</div>
+<div class="responsivehide headermember" style="display:none; float:left">
+<div class="dropdown2">
+<a href="/"><span class="conversationnotification browsebutton" id="activebrowse" style="margin-left:5px;display:inline;font-size:15px;line-height:30px;border-bottom: none !important;cursor:pointer;"><i class="fa-solid fa-house user-icon" style="margin-right:8px;"></i> Browse</span></a>
+<div class="dropdown2-content">
+<a class="menu1" href="/Forum-OG-Accounts" style="color:#a4a4a4;padding:15px;display:block;"><i aria-hidden="true" class="fa fa-user-check" style="width: 16px !important;"></i>  Usernames</a>
+<a class="menu1" href="/Forum-Stat-Accounts" style="color:#a4a4a4;padding:15px;display:block;"><i aria-hidden="true" class="fa fa-rocket" style="width: 16px !important;"></i>  Stats</a>
+<a class="menu1" href="/Forum-Gaming-Accounts" style="color:#a4a4a4;padding:15px;display:block;"><i aria-hidden="true" class="fa fa-gamepad" style="width: 16px !important;"></i>  Gaming</a>
+<a class="menu1" href="/Forum-Member-Services" style="color:#a4a4a4;padding:15px;display:block;"><i aria-hidden="true" class="fas fa-cogs" style="width: 16px !important;"></i>  Services</a>
+</div>
+</div>
+<a class="conversationnotification" href="/misc.php?action=help"><div style="display:inline;font-size:15px;line-height:30px;"><i class="fa-solid fa-ellipsis user-icon" style="margin-right:8px;"></i> Extras</div></a>
+<div class="dropdown-content-mobile" id="dropdown-more" style="left: 20%; width: 195px; background-color:#1e1e1e;border-radius:10px;margin-top: 5px;">
+<a class="dropdownborder" href="/misc.php?action=help">Extras/Help</a>
+<a class="dropdownborder" href="/search">Search</a>
+<a class="dropdownborder" href="javascript:void(0)">Awards</a>
+<a class="dropdownborder" href="/memberlist.php">Members</a>
+<a class="dropdownborder" href="javascript:void(0)">Top Members</a>
+<a class="dropdownborder" href="/showteam.php">Team</a>
+</div>
+</div>
+<div class="conversationnotification" id="dropdown-search-open" style="display:none;font-size:17px;line-height:30px"><i aria-hidden="true" class="fa fa-search"></i></div>
+<div class="dropdown-content-mobile" id="dropdown-search" style="left: 20%; padding:10px; background-color:#1e1e1e;border-radius:10px;margin-top: 5px;">
+<form action="search.php" method="post">
+<input name="action" type="hidden" value="do_search"/>
+<input name="findthreadst" type="hidden" value="1"/>
+<input name="forums" type="hidden" value="all"/>
+<input name="showresults" type="hidden" value="threads"/>
+<input class="textbox" name="keywords" placeholder="Search..." style="padding:6px !important;" type="text" value=""/>
+<br/><br/>
+<input class="button" style="padding: 7px 8px !important;font-size:12px !important;" type="submit" value="Search"/> <a href="/search.php" style="float:right">Advanced Search</a></form></div>
+</div>
+<div class="guestnav" style="float: right; margin-left: 5px;background-color: #2156c9;color:#fff;"><a class="guestnav" href="../register.html" style="background-color: #2156c9;color:#fff !important;">Sign Up</a></div>
+<div class="guestnav" style="float: right;background-color:transparent;"><a class="guestnav" href="../login.html" style="background-color:transparent;">Login</a></div>
+</div>
+<div class="modal" id="quick_login" style="display: none; width: 320px">
+<form action="member.php" method="post">
+<input name="action" type="hidden" value="do_login"/>
+<input name="url" type="hidden" value=""/>
+<input name="my_post_key" type="hidden" value="add5ec2bd1fb59868b251939c8377b80"/>
+<input name="remember_me" type="hidden" value="yes"/>
+<input name="quick_login" type="hidden" value="1"/>
+<table border="0" cellpadding="5" cellspacing="0" class="trim-container" style="width: 320px;border: 0">
+<tbody><tr>
+<td class="maintitle" colspan="2" style="font-size: 12px; text-transform: uppercase;">
+<strong>Login to OGU</strong>
+</td>
+</tr>
+<tr>
+<td class="col_row_new">
+<div class="inputstyle">
+<label class="input">
+<input class="textbox" name="username" placeholder="Username..." size="25" type="text" value=""/>
+</label>
+</div>
+</td>
+</tr>
+<tr>
+<td class="col_row_new">
+<div class="inputstyle">
+<label class="input">
+<input class="textbox" name="password" placeholder="Password..." size="25" type="password" value=""/>
+</label>
+</div>
+</td>
+</tr>
+<!--<tr>
+			<td class="col_row_new">
+				<div class="inputstyle">
+					<label class="input">
+						<input type="password" class="textbox" name="2facode" size="25"  placeholder="Enter 2FA Code (If enabled)" />
+					</label>
+				</div>
+			</td>
+		</tr>-->
+<tr>
+<td class="col_row_new">
+<div>
+<a href="member.php?action=lostpw">
+<div class="lostpass">
+							Lost your password?
+						</div>
+</a>
+</div>
+</td>
+</tr>
+<tr>
+<td align="center" class="col_row_new"><label title="If ticked, your login details will be remembered on this computer, otherwise, you will be logged out as soon as you close your browser."><input checked="checked" class="checkbox" name="remember" type="checkbox" value="yes"/> Remember me</label></td>
+</tr>
+<tr>
+<td style="padding: 0;">
+<input class="loginpage" name="submit" type="submit" value="Login"/>
+</td>
+</tr>
+</tbody></table>
+</form>
+</div>
+<style>
+
+	
+	
+	.dropdown-content::before {
+
+    /*bottom: 100%;
+    border: solid transparent;*/
+        border-top-color: transparent;
+        border-top-width: medium;
+        border-right-color: transparent;
+        border-right-width: medium;
+        border-bottom-color: transparent;
+        border-bottom-width: medium;
+        border-left-color: transparent;
+        border-left-width: medium;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    border-bottom-color: #b32222;
+    border-width: 7px;
+    margin-bottom: -2px;
+    border-left-color: #b32222;
+
+}
+.dropdown-content {
+    background-color: #232323;
+    width: 230px; border-radius: 2px;
+}.dropdown-content a { border-bottom: 0px !important }
+.dropdown-content a:hover {
+    background-color: rgb(26, 26, 26) !important; border-radius: 2px;
+}</style>
+<script type="text/javascript">
+				$("#dropdown-more-open").on("click", function (e) {
+					var document_width = $(document).outerWidth(),
+						element_width = $("#dropdown-more").outerWidth(),
+						from_left = $("#dropdown-more").parent().offset().left;
+					if ((element_width + from_left) >= document_width) {
+						$("#dropdown-more").css("right",  "0px");
+						$("#dropdown-more").css("left",  "");
+					}
+					
+					$("#dropdown-more").toggle();
+					return false;
+				});
+				$("#dropdown-more").on("click", function (e) {
+					e.stopPropagation();
+				});
+				$("body").on("click", function (e) {
+					$("#dropdown-more").hide();
+				});
+			</script>
+<script type="text/javascript">
+	//window.onscroll = function() {scrollFunction()};
+     $(window).on('scroll', function () {
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > 35) {
+            $('#headerlogo').stop().animate({height: "30px"},50);
+        }
+        else {
+             $('#headerlogo').stop().animate({height: "60px"},50);   
+        }
+     });
+     </script>
+<script type="text/javascript">
+	window.onscroll = function() {scrollFunction()};
+     $(window).on('scroll', function () {
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > 50) {
+            $('#mobilenav').stop().animate({height: "0px"},50);
+        }
+        else {
+             $('#mobilenav').stop().animate({height: "0px"},50); 
+        }
+     });
+     </script>
+<script type="text/javascript">
+	$(function () {
+		$("#dropdown-profile-open").on("click", function (e) {
+			var document_width = $(document).outerWidth(),
+				element_width = $("#dropdown-profile").outerWidth(),
+				from_left = $("#dropdown-profile").parent().offset().left;
+			if ((element_width + from_left) >= document_width) {
+				$("#dropdown-profile").css("right",  "0px");
+				$("#dropdown-profile").css("left",  "");
+			}
+
+			$("#dropdown-profile").toggle();
+			return false;
+		});
+		$("#dropdown-profile").on("click", function (e) {
+			e.stopPropagation();
+		});
+		$("body").on("click", function (e) {
+			$("#dropdown-profile").hide();
+		});
+	});
+	
+	/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+	function myFunction(element) {
+		$("#myDropdown").toggle();
+		var arrow = $(element).find("i.fa");
+		if (arrow.hasClass("fa-angle-down")) {
+			arrow.removeClass("fa-angle-down");
+			arrow.addClass("fa-angle-up");
+		} else {
+			arrow.removeClass("fa-angle-up");
+			arrow.addClass("fa-angle-down");
+		}
+	}
+	
+	// Close the dropdown menu if the user clicks outside of it
+	window.onclick = function(event) {
+		if (!event.target.matches('.dropbtn, .btnfix')) {
+			var dropdowns = document.getElementsByClassName("dropdown-content");
+			var i;
+			for (i = 0; i < dropdowns.length; i++) {
+				var openDropdown = dropdowns[i];
+				if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+				}
+			}
+		}
+	}
+	
+	
+	/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("dropdownmenu").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtnmenu')) {
+    var dropdowns = document.getElementsByClassName("dropdown-menu-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+} 
+	
+
+	$(function () {
+
+    $(".messagecolor").each(function() {
+		var el = $(this);
+        var value = parseFloat(el.text());
+        if (value > 0) {
+            /*el.css({
+            "color": "white",
+            "background-color": "rgb(186,57,57)",
+        });*/
+			el.addClass('messagecolor-colored');
+        } else {
+            el.css("background", "#383838");
+        }
+    }); 
+});
+</script>
+<!-- end: header_welcomeblock_guest --><div style="float: right;"></div></div>
+<div class="responsivehide" style="height:90px"></div>
+<div class="responsiveshow" style="height:60px"></div>
+<!--<div class="darkerbelow"></div>-->
+<div id="fullcontainment">
+<div class="wraps">
+<!-- start: nav -->
+<div class="breadcrumb" style="background: #242424;">
+<!-- start: nav_bit -->
+<a href="https://oguser.com/index.php">OGU</a><!-- start: nav_sep -->
+<i class="fa fa-angle-double-right" style="font-size: 14px; padding: 0px 4px; color: rgb(98, 98, 98);"></i>
+<!-- end: nav_sep -->
+<!-- end: nav_bit --><!-- start: nav_bit -->
+<a href="../index.html">Profile of 9</a>
+<!-- end: nav_bit --><!-- start: nav_sep_active -->
+<i class="fa fa-angle-double-right" style="font-size: 14px; padding: 0px 4px; color: rgb(98, 98, 98);"></i>
+<!-- end: nav_sep_active --><!-- start: nav_bit_active -->
+<span class="active">Reputation Report</span>
+<!-- end: nav_bit_active -->
+</div>
+<!-- end: nav -->
+<!-- end: header -->
+<div class="rep_sidebar">
+<div class="trim-container">
+<div class="maintitle" style="font-size:25px !important;">
+<span class="style10">9</span></div>
+<div class="col_row" style="display: flex;border-top-left-radius: 0.80rem;border-top-right-radius: 0.80rem;">
+				Reputation:<span style="margin-left: auto;"><span class="repbox _plus" style="font-size:16px;font-weight:600;">5,373</span></span>
+</div>
+<div class="col_row" style="display: flex;">
+				Positives:<span style="margin-left: auto;">2,079</span>
+</div>
+<div class="col_row" style="display: flex;">
+				Negatives:<span style="margin-left: auto;">1</span>
+</div>
+<div class="col_row" style="display: flex;border-bottom-left-radius: 0.80rem;border-bottom-right-radius: 0.80rem">
+				Neutrals:<span style="margin-left: auto;">0</span>
+</div>
+</div>
+<br/>
+<div class="trim-container responsivehide" style="border-top-right-radius: 0.80rem;border-top-right-radius: 0.80remrem;">
+<div class="col_row" style="border-top-left-radius: 0.80rem;border-top-right-radius: 0.80rem;"><form action="reputation.php" method="get">
+<input name="uid" type="hidden" value="99999"/>
+<select name="show" style="width: 100%;">
+<option value="all">Show: All Votes</option>
+<option value="positive">Show: Positive Ratings</option>
+<option value="neutral">Show: Neutral Ratings</option>
+<option value="negative">Show: Negative Ratings</option>
+</select><br/><br/>
+<select name="sort" style="width: 100%;">
+<option selected="selected" value="dateline">Sort by: Last Updated</option>
+<option value="username">Sort by: Username</option>
+</select><br/><br/>
+<div class="rep-button"><!-- start: gobutton -->
+<input class="button" type="submit" value="Go"/>
+<!-- end: gobutton --></div>
+</form></div>
+</div>
+</div><div class="rep_content">
+<!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+2</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1535587" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/ew"><span style="color: #70d7ea;background:url('../assets/udGakie_8251fb46.gif');text-shadow: 0px 4px 5px #000;">ew</span></a> <span class="smalltext responsivehide"> - 02-19-2026, 09:08 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			great mm
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+2</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1535586" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/za"><span style="color: #70d7ea;background:url('../assets/udGakie_8251fb46.gif');text-shadow: 0px 4px 5px #000;">za</span></a> <span class="smalltext responsivehide"> - 02-19-2026, 09:08 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			mm'd for me
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+2</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1535236" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/eggru"><span style="color: #70d7ea;background:url('../assets/udGakie_8251fb46.gif');text-shadow: 0px 4px 5px #000;">eggru</span></a> <span class="smalltext responsivehide"> - 02-18-2026, 08:25 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			mmed steam group
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+1</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1535165" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/neurine"><span style="color: #787878; font-weight: 600; text-decoration: line-through; text-decoration-color: #cc3333;">neurine</span></a> <span class="smalltext responsivehide"> - 02-18-2026, 04:03 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			fast mm
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+1</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1535080" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/rayquaza"><span style="color: #ffe400; text-shadow: 0px 4px 2px #000000;">rayquaza</span></a> <span class="smalltext responsivehide"> - 02-18-2026, 08:07 AM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			legit
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+2</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1534557" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/iwouldntmind"><span style="color: #787878; font-weight: 600; text-decoration: line-through; text-decoration-color: #cc3333;">iwouldntmind</span></a> <span class="smalltext responsivehide"> - 02-16-2026, 05:28 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			mm'd $100, ty
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+5</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1534503" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/Inmortal"><span style="color: #ffffff;background:url('../assets/h-SQW3ZC_b9c1e682.gif');text-shadow: 0px 4px 5px #000;">Inmortal</span></a> <span class="smalltext responsivehide"> - 02-16-2026, 02:33 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			easy and great deal &lt;3
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+3</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1534350" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/y"><span style="background: transparent url('../assets/clip-transparent-sparkle-gif-4_f199cf49.gif');color: #FFFFFF;text-shadow: 0px 2px 2px #cee9f5;">y</span></a> <span class="smalltext responsivehide"> - 02-15-2026, 10:20 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			smooth MM 3k
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+2</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1534205" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/23"><span style="color: #70d7ea;background:url('../assets/udGakie_8251fb46.gif');text-shadow: 0px 4px 5px #000;">23</span></a> <span class="smalltext responsivehide"> - 02-15-2026, 03:01 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			thank you for mm !
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+2</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1534031" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/terror"><span style="color: #70d7ea;background:url('../assets/udGakie_8251fb46.gif');text-shadow: 0px 4px 5px #000;">terror</span></a> <span class="smalltext responsivehide"> - 02-14-2026, 10:38 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			smooth deal :D
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+3</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1533926" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/Cy0aKveokXD"><span style="color: #b747ff;text-shadow: 0 2px 5px #000;background:url('../assets/zTF1Pzd_c22cfdcb.gif');font-weight: 600;-webkit-animation: colorchange 20s infinite alternate;">Cy0aKveokXD</span></a> <span class="smalltext responsivehide"> - 02-14-2026, 04:12 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			mm’d for me ty
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+3</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1533924" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/dax"><span style="color: #b747ff;text-shadow: 0 2px 5px #000;background:url('../assets/zTF1Pzd_c22cfdcb.gif');font-weight: 600;-webkit-animation: colorchange 20s infinite alternate;">dax</span></a> <span class="smalltext responsivehide"> - 02-14-2026, 04:06 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			mm'd a deal
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+3</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1533902" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/dario"><span style="color: #b747ff;text-shadow: 0 2px 5px #000;background:url('../assets/zTF1Pzd_c22cfdcb.gif');font-weight: 600;-webkit-animation: colorchange 20s infinite alternate;">dario</span></a> <span class="smalltext responsivehide"> - 02-14-2026, 02:36 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			mm'ed for me
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+2</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1533789" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/RaygunStock"><span style="color: #70d7ea;background:url('../assets/udGakie_8251fb46.gif');text-shadow: 0px 4px 5px #000;">RaygunStock</span></a> <span class="smalltext responsivehide"> - 02-14-2026, 01:23 AM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			mmed $840
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote --><!-- start: reputation_vote -->
+<div style="display: flex;align-items: center;background-color: #212121;padding: 13px;border-radius: 7px;margin-bottom: 4px;">
+<div style="padding: 6px 10px;margin-right: 15px;background-color: #2b2b2b;border-radius: 2px;"><strong class="reputation_positive">+5</strong></div>
+<div style="display: flex; flex-wrap: wrap;flex-grow: 1;">
+<div class="trow_reputation_positive" id="rid1533688" style="font-size: 15px;margin-bottom: 5px;">
+<a href="https://oguser.com/Elex"><span style="color: #ffffff;background:url('../assets/h-SQW3ZC_b9c1e682.gif');text-shadow: 0px 4px 5px #000;">Elex</span></a> <span class="smalltext responsivehide"> - 02-13-2026, 07:00 PM<br/></span>
+</div>
+<div class="break"></div>
+<div style="font-size: 14px;color: #656565;">
+			MM a Deal
+		</div>
+</div>
+<div style="margin-left: auto;"> </div>
+</div>
+<!-- end: reputation_vote -->
+<div style="text-align:center;margin:auto;margin-top:10px;"><!-- start: multipage -->
+<div class="pagination responsivehide">
+<!-- start: multipage_prevpage -->
+<a class="pagination_previous" href="reputation.php?uid=99999">«</a>
+<!-- end: multipage_prevpage --><!-- start: multipage_page -->
+<a class="pagination_page" href="reputation.php?uid=99999">1</a>
+<!-- end: multipage_page --><!-- start: multipage_page_current -->
+<span class="pagination_current responsivehide">2</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a class="pagination_page" href="../reputation/page_3.html">3</a>
+<!-- end: multipage_page --><!-- start: multipage_end -->
+&gt; <a class="pagination_last" href="#" title="Page 139 not downloaded">139</a>
+<!-- end: multipage_end --><!-- start: multipage_nextpage -->
+<a class="pagination_next" href="../reputation/page_3.html">Next »</a>
+<!-- end: multipage_nextpage -->
+</div>
+<div class="paginationmobile responsiveshow">
+<!-- start: multipage_prevpage -->
+<a class="pagination_previous" href="reputation.php?uid=99999">«</a>
+<!-- end: multipage_prevpage --><!-- start: multipage_page -->
+<a class="pagination_page" href="reputation.php?uid=99999">1</a>
+<!-- end: multipage_page --><!-- start: multipage_page_current -->
+<span class="pagination_current responsivehide">2</span>
+<!-- end: multipage_page_current --><!-- start: multipage_page -->
+<a class="pagination_page" href="../reputation/page_3.html">3</a>
+<!-- end: multipage_page --><!-- start: multipage_end -->
+&gt; <a class="pagination_last" href="#" title="Page 139 not downloaded">139</a>
+<!-- end: multipage_end --><!-- start: multipage_nextpage -->
+<a class="pagination_next" href="../reputation/page_3.html">Next »</a>
+<!-- end: multipage_nextpage -->
+</div>
+<!-- end: multipage --></div>
+<div class="trim-container responsiveshow" style="margin-bottom: 30px">
+<div class="col_row"><form action="reputation.php" method="get">
+<input name="uid" type="hidden" value="99999"/>
+<select name="show" style="width: 100%;">
+<option value="all">Show: All Votes</option>
+<option value="positive">Show: Positive Ratings</option>
+<option value="neutral">Show: Neutral Ratings</option>
+<option value="negative">Show: Negative Ratings</option>
+</select><br/><br/>
+<select name="sort" style="width: 100%;">
+<option selected="selected" value="dateline">Sort by: Last Updated</option>
+<option value="username">Sort by: Username</option>
+</select><br/><br/>
+<div class="rep-button"><!-- start: gobutton -->
+<input class="button" type="submit" value="Go"/>
+<!-- end: gobutton --></div>
+</form></div>
+</div>
+</div>
+
+<!-- CF beacon removed for offline use -->
+</body></html><!-- end: reputation -->
