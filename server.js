@@ -177,6 +177,19 @@ app.get('/', (req, res) => {
     res.send("Welcome to the server. Directory root.");
 });
 
+// slug_private or slug_private.html -> serve private message page (private.html)
+app.get('/:slug_private', (req, res, next) => {
+    const param = req.params.slug_private || '';
+    const match = param.match(/^(.+)_private(\.html)?$/);
+    if (match) {
+        const privatePath = path.join(__dirname, 'private.html');
+        if (fs.existsSync(privatePath)) {
+            return res.sendFile(privatePath);
+        }
+    }
+    next();
+});
+
 app.get('/:slug', (req, res, next) => {
     const slug = req.params.slug;
 
