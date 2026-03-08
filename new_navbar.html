@@ -1,0 +1,35 @@
+<style id="navbar-stability">
+    html { scrollbar-gutter: stable !important; overflow-y: scroll !important; overflow-x: hidden !important; }
+    body { margin: 0 !important; padding: 0 !important; overflow-x: hidden !important; width: 100% !important; position: relative !important; }
+    .headertop { animation: none !important; transition: none !important; -webkit-transform: translateZ(0); transform: translateZ(0); }
+</style>
+<style>
+    .headertop .nav-btn { color: #a4a4a4; text-decoration: none; padding: 8px 12px; border-radius: 6px; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; transition: color .2s; }
+    .headertop .nav-btn:hover { color: #e0e0e0; }
+    .headertop .og-logo { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(165deg, #e8e8e8 0%, #a0a0a0 35%, #c8c8c8 70%, #888 100%); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; }
+    .headertop .og-logo:hover { opacity: .95; }
+</style>
+<div class="headertop" style="background-color: #131313; position: fixed; top: 0; left: 0; right: 0; z-index: 100000; padding: 10px 0; border-bottom: 1px solid #1a1a1a; box-sizing: border-box; width: 100%; margin: 0;">
+<div class="top-wrap" style="width: 75%; max-width: 1714px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; box-sizing: border-box;">
+<div class="header-left" style="display: flex; align-items: center; gap: 4px;">
+<a class="nav-btn" href="index.html"><i class="fa fa-home"></i><span>Browse</span></a>
+<a class="nav-btn" href="#" id="activeupgrade"><i class="fa fa-bolt"></i><span>Upgrade</span></a>
+<a class="nav-btn" href="credits.html"><i class="fa fa-coins"></i><span>Credits</span></a>
+<a class="nav-btn" href="#"><i class="fa fa-trophy"></i><span>Awards</span></a>
+<a class="nav-btn" href="#"><i class="fa fa-ellipsis-h"></i><span>Extras</span></a>
+<a class="nav-btn" href="search_threads.html"><i class="fa fa-search"></i></a>
+</div>
+<div class="header-center" style="position: absolute; left: 50%; transform: translateX(-50%);">
+<a href="index.html" class="og-logo">OG</a>
+</div>
+<div class="header-right" style="display: flex; align-items: center; gap: 12px;">
+<a class="nav-btn" href="#"><span>Explore</span></a>
+<a class="nav-btn" href="#" style="padding: 8px;"><i class="fa fa-bell" style="font-size: 18px; color: #a4a4a4;"></i></a>
+<a class="nav-btn pmnav" href="private.html" id="msg-nav-link" style="padding: 8px;"><i class="fa fa-comments" style="font-size: 18px; color: #a4a4a4;"></i></a>
+<button class="dropbtn headermember" id="dropdown-profile-desktop" style="background: none; border: 2px solid #1a1919; border-radius: 50%; padding: 0; cursor: pointer;">
+<img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&amp;f=y" style="height: 32px; width: 32px; border-radius: 50%; display: block;" alt="Profile"/>
+</button>
+</div>
+</div>
+</div>
+<div class="fixed-header-space" style="height: 60px;"></div>

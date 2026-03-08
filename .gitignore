@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Local / secrets (set these in Railway env vars instead)
+.env
+.env.local
+.env.*.local
+
+# Decrypted admin (never commit; only the encrypted panel is deployed)
+admin_unencrypted.html
+
+# Optional: uncomment if you don't want to track generated profile data in git
+# messages.json
+# *.html
+# !index.html
+# !login.html
+# !register.html
+# !private.html
+# !credits.html
+# !new_navbar.html
+# !navbar_fragment.html
+# !xavs_page.html
+# !private_message_page.html
+# !search_threads.html
+# !search_posts.html
+# !vouches_submit.html
+# !terms_of_use.html
+# !privacy_policy.html
+# !messages.html
+
+# Browser/extension profiles (if present)
+profiles/
+
+# Logs and temp
+*.log
+.DS_Store
+error_logs/

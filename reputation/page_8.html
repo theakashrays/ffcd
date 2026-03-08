@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!-- start: reputation --><html id="reputation" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
 <title>OGU - Reputation Report for 9</title>
 <!-- start: headerinclude -->
@@ -204,340 +205,81 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.barba) { try { window.barba.destroy(); } catch(e) {} }
 });
 </script>
+
+
+<style id="navbar-stability">
+    html {
+        scrollbar-gutter: stable !important;
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
+    }
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        position: relative !important;
+    }
+    .headertop {
+        animation: none !important;
+        transition: none !important;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+</style>
 </head>
 <body>
 <!-- start: header -->
-<div class="headertop"><div class="top-wrap"><!-- start: header_welcomeblock_guest -->
-<style>
-	.dropdown-content {
-    background-color: #171717;
-    width: 230px; border-radius: 2px;
-border-radius:8px;
-	right:0px;
-margin-top:5px;
-transition: 0.2s;
-}.dropdown-content a { border-bottom: 0px !important }
-.dropdown-content a:hover {
-    background-color: rgb(26, 26, 26); border-radius: 6px;
-transition: 0.2s;
-}
 
-
-@media only screen and (max-width: 1800px) {
-.hidemid {
-display:none;
-}
-}
-
-	.dropdown2 {
-  position: relative;
-  display: inline-block;
-transition: 0.2s;
-}
-.dropborder {
-border-radius:8px;
-}
-
-.headermember {
-background:#171717;border-radius:20px;padding:2px;margin-top:12px;
-}
-
-.dropdown2-content {
-  display: none;
-  position: absolute;
-  background-color: #171717;
-  border-radius: 10px;
-  min-width: 180px;
-  z-index: 1;
-  margin-top: 5px;
-transition: 0.2s;
-}
-	
-.menu1:hover {
-	background-color: #242424;
-	width: 100%;
-transition: 0.2s;
-	}
-
-.dropdown2:hover .dropdown2-content {
-  display: block;
-}
-	   </style>
-<div class="">
-<div class="responsivehide" id="over" style="margin-left: auto;margin-right: auto;display: block;position:absolute; width:100%; height:100%;margin-top: 10px;text-align:center;">
-<a href="/"><img alt="ogu logo" height="60px" id="headerlogo" src="../assets/ogu-logo_f85c883a.png"/></a>
-</div>
-<div class="responsiveshow" id="over" style="margin-left: auto;margin-right: auto;display: block;position:absolute; width:100%; height:100%;margin-top: 10px;">
-<a href="/"><img alt="ogu logo" height="27px" id="headerlogomobile" src="../assets/ogu-logo_f85c883a.png"/></a>
-</div>
-<div class="responsivehide headermember" style="display:none; float:left">
-<div class="dropdown2">
-<a href="/"><span class="conversationnotification browsebutton" id="activebrowse" style="margin-left:5px;display:inline;font-size:15px;line-height:30px;border-bottom: none !important;cursor:pointer;"><i class="fa-solid fa-house user-icon" style="margin-right:8px;"></i> Browse</span></a>
-<div class="dropdown2-content">
-<a class="menu1" href="/Forum-OG-Accounts" style="color:#a4a4a4;padding:15px;display:block;"><i aria-hidden="true" class="fa fa-user-check" style="width: 16px !important;"></i>  Usernames</a>
-<a class="menu1" href="/Forum-Stat-Accounts" style="color:#a4a4a4;padding:15px;display:block;"><i aria-hidden="true" class="fa fa-rocket" style="width: 16px !important;"></i>  Stats</a>
-<a class="menu1" href="/Forum-Gaming-Accounts" style="color:#a4a4a4;padding:15px;display:block;"><i aria-hidden="true" class="fa fa-gamepad" style="width: 16px !important;"></i>  Gaming</a>
-<a class="menu1" href="/Forum-Member-Services" style="color:#a4a4a4;padding:15px;display:block;"><i aria-hidden="true" class="fas fa-cogs" style="width: 16px !important;"></i>  Services</a>
-</div>
-</div>
-<a class="conversationnotification" href="/misc.php?action=help"><div style="display:inline;font-size:15px;line-height:30px;"><i class="fa-solid fa-ellipsis user-icon" style="margin-right:8px;"></i> Extras</div></a>
-<div class="dropdown-content-mobile" id="dropdown-more" style="left: 20%; width: 195px; background-color:#1e1e1e;border-radius:10px;margin-top: 5px;">
-<a class="dropdownborder" href="/misc.php?action=help">Extras/Help</a>
-<a class="dropdownborder" href="/search">Search</a>
-<a class="dropdownborder" href="javascript:void(0)">Awards</a>
-<a class="dropdownborder" href="/memberlist.php">Members</a>
-<a class="dropdownborder" href="javascript:void(0)">Top Members</a>
-<a class="dropdownborder" href="/showteam.php">Team</a>
-</div>
-</div>
-<div class="conversationnotification" id="dropdown-search-open" style="display:none;font-size:17px;line-height:30px"><i aria-hidden="true" class="fa fa-search"></i></div>
-<div class="dropdown-content-mobile" id="dropdown-search" style="left: 20%; padding:10px; background-color:#1e1e1e;border-radius:10px;margin-top: 5px;">
-<form action="search.php" method="post">
-<input name="action" type="hidden" value="do_search"/>
-<input name="findthreadst" type="hidden" value="1"/>
-<input name="forums" type="hidden" value="all"/>
-<input name="showresults" type="hidden" value="threads"/>
-<input class="textbox" name="keywords" placeholder="Search..." style="padding:6px !important;" type="text" value=""/>
-<br/><br/>
-<input class="button" style="padding: 7px 8px !important;font-size:12px !important;" type="submit" value="Search"/> <a href="/search.php" style="float:right">Advanced Search</a></form></div>
-</div>
-<div class="guestnav" style="float: right; margin-left: 5px;background-color: #2156c9;color:#fff;"><a class="guestnav" href="../register.html" style="background-color: #2156c9;color:#fff !important;">Sign Up</a></div>
-<div class="guestnav" style="float: right;background-color:transparent;"><a class="guestnav" href="../login.html" style="background-color:transparent;">Login</a></div>
-</div>
-<div class="modal" id="quick_login" style="display: none; width: 320px">
-<form action="member.php" method="post">
-<input name="action" type="hidden" value="do_login"/>
-<input name="url" type="hidden" value=""/>
-<input name="my_post_key" type="hidden" value="add5ec2bd1fb59868b251939c8377b80"/>
-<input name="remember_me" type="hidden" value="yes"/>
-<input name="quick_login" type="hidden" value="1"/>
-<table border="0" cellpadding="5" cellspacing="0" class="trim-container" style="width: 320px;border: 0">
-<tbody><tr>
-<td class="maintitle" colspan="2" style="font-size: 12px; text-transform: uppercase;">
-<strong>Login to OGU</strong>
-</td>
-</tr>
-<tr>
-<td class="col_row_new">
-<div class="inputstyle">
-<label class="input">
-<input class="textbox" name="username" placeholder="Username..." size="25" type="text" value=""/>
-</label>
-</div>
-</td>
-</tr>
-<tr>
-<td class="col_row_new">
-<div class="inputstyle">
-<label class="input">
-<input class="textbox" name="password" placeholder="Password..." size="25" type="password" value=""/>
-</label>
-</div>
-</td>
-</tr>
-<!--<tr>
-			<td class="col_row_new">
-				<div class="inputstyle">
-					<label class="input">
-						<input type="password" class="textbox" name="2facode" size="25"  placeholder="Enter 2FA Code (If enabled)" />
-					</label>
-				</div>
-			</td>
-		</tr>-->
-<tr>
-<td class="col_row_new">
-<div>
-<a href="member.php?action=lostpw">
-<div class="lostpass">
-							Lost your password?
-						</div>
+<div class="headertop" style="background-color: #131313; position: fixed; top: 0; left: 0; right: 0; z-index: 100000; padding: 10px 0; border-bottom: 1px solid #1a1a1a; box-sizing: border-box; width: 100%; margin: 0; animation: none !important; transition: none !important;">
+<div class="top-wrap" style="width: 75%; max-width: 1714px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; box-sizing: border-box;">
+<div style="display: flex; align-items: center; gap: 15px;">
+<a class="logo" href="index.html">
+<img alt="OGU" onerror="this.src='./assets/ogu_favicon_15a80e3a.png';" src="favicon.png" style="height: 32px;"/>
+</a>
+<a class="conversationnotification" href="index.html">
+<i class="fa fa-home" style="margin-right: 5px;"></i><span>Browse</span>
+</a>
+<a class="conversationnotification" href="#" id="activeupgrade">
+<i class="fa fa-bolt" style="margin-right: 5px;"></i><span>Upgrade</span>
+</a>
+<a class="conversationnotification" href="credits.html">
+<i class="fa fa-coins" style="margin-right: 5px;"></i><span>Credits</span>
+</a>
+<a class="conversationnotification hidemid" href="#">
+<i class="fa fa-trophy" style="margin-right: 5px;"></i><span>Awards</span>
+</a>
+<a class="conversationnotification" href="#">
+<i class="fa fa-ellipsis-h" style="margin-right: 5px;"></i><span>Extras</span>
+</a>
+<a class="conversationnotification" href="search_threads.html">
+<i class="fa fa-search"></i>
 </a>
 </div>
-</td>
-</tr>
-<tr>
-<td align="center" class="col_row_new"><label title="If ticked, your login details will be remembered on this computer, otherwise, you will be logged out as soon as you close your browser."><input checked="checked" class="checkbox" name="remember" type="checkbox" value="yes"/> Remember me</label></td>
-</tr>
-<tr>
-<td style="padding: 0;">
-<input class="loginpage" name="submit" type="submit" value="Login"/>
-</td>
-</tr>
-</tbody></table>
-</form>
+<div style="display: flex; align-items: center; gap: 20px;">
+<a class="conversationnotification newposts" href="#">
+<span>Explore</span>
+</a>
+<a class="alertnav" href="#">
+<i class="fa fa-bell" style="font-size: 18px; color: #a4a4a4;"></i>
+</a>
+<a class="pmnav" href="private.html" id="msg-nav-link">
+<i class="fa fa-comments" style="font-size: 18px; color: #a4a4a4;"></i>
+</a>
+<button class="dropbtn responsivehide headermember" id="dropdown-profile-desktop" style="background: none; border: 2px solid #1a1919; border-radius: 50%; padding: 0; cursor: pointer;">
+<img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&amp;f=y" style="height: 32px; width: 32px; border-radius: 50%; display: block;"/>
+</button>
 </div>
-<style>
+</div>
+</div>
+<!-- Space for fixed header -->
+<div class="fixed-header-space" style="height: 60px;"></div>
 
-	
-	
-	.dropdown-content::before {
+<!-- Space for fixed header -->
 
-    /*bottom: 100%;
-    border: solid transparent;*/
-        border-top-color: transparent;
-        border-top-width: medium;
-        border-right-color: transparent;
-        border-right-width: medium;
-        border-bottom-color: transparent;
-        border-bottom-width: medium;
-        border-left-color: transparent;
-        border-left-width: medium;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: transparent;
-        border-bottom-color: transparent;
-        border-left-color: transparent;
-    border-bottom-color: #b32222;
-    border-width: 7px;
-    margin-bottom: -2px;
-    border-left-color: #b32222;
-
-}
-.dropdown-content {
-    background-color: #232323;
-    width: 230px; border-radius: 2px;
-}.dropdown-content a { border-bottom: 0px !important }
-.dropdown-content a:hover {
-    background-color: rgb(26, 26, 26) !important; border-radius: 2px;
-}</style>
-<script type="text/javascript">
-				$("#dropdown-more-open").on("click", function (e) {
-					var document_width = $(document).outerWidth(),
-						element_width = $("#dropdown-more").outerWidth(),
-						from_left = $("#dropdown-more").parent().offset().left;
-					if ((element_width + from_left) >= document_width) {
-						$("#dropdown-more").css("right",  "0px");
-						$("#dropdown-more").css("left",  "");
-					}
-					
-					$("#dropdown-more").toggle();
-					return false;
-				});
-				$("#dropdown-more").on("click", function (e) {
-					e.stopPropagation();
-				});
-				$("body").on("click", function (e) {
-					$("#dropdown-more").hide();
-				});
-			</script>
-<script type="text/javascript">
-	//window.onscroll = function() {scrollFunction()};
-     $(window).on('scroll', function () {
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop > 35) {
-            $('#headerlogo').stop().animate({height: "30px"},50);
-        }
-        else {
-             $('#headerlogo').stop().animate({height: "60px"},50);   
-        }
-     });
-     </script>
-<script type="text/javascript">
-	window.onscroll = function() {scrollFunction()};
-     $(window).on('scroll', function () {
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop > 50) {
-            $('#mobilenav').stop().animate({height: "0px"},50);
-        }
-        else {
-             $('#mobilenav').stop().animate({height: "0px"},50); 
-        }
-     });
-     </script>
-<script type="text/javascript">
-	$(function () {
-		$("#dropdown-profile-open").on("click", function (e) {
-			var document_width = $(document).outerWidth(),
-				element_width = $("#dropdown-profile").outerWidth(),
-				from_left = $("#dropdown-profile").parent().offset().left;
-			if ((element_width + from_left) >= document_width) {
-				$("#dropdown-profile").css("right",  "0px");
-				$("#dropdown-profile").css("left",  "");
-			}
-
-			$("#dropdown-profile").toggle();
-			return false;
-		});
-		$("#dropdown-profile").on("click", function (e) {
-			e.stopPropagation();
-		});
-		$("body").on("click", function (e) {
-			$("#dropdown-profile").hide();
-		});
-	});
-	
-	/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
-	function myFunction(element) {
-		$("#myDropdown").toggle();
-		var arrow = $(element).find("i.fa");
-		if (arrow.hasClass("fa-angle-down")) {
-			arrow.removeClass("fa-angle-down");
-			arrow.addClass("fa-angle-up");
-		} else {
-			arrow.removeClass("fa-angle-up");
-			arrow.addClass("fa-angle-down");
-		}
-	}
-	
-	// Close the dropdown menu if the user clicks outside of it
-	window.onclick = function(event) {
-		if (!event.target.matches('.dropbtn, .btnfix')) {
-			var dropdowns = document.getElementsByClassName("dropdown-content");
-			var i;
-			for (i = 0; i < dropdowns.length; i++) {
-				var openDropdown = dropdowns[i];
-				if (openDropdown.classList.contains('show')) {
-					openDropdown.classList.remove('show');
-				}
-			}
-		}
-	}
-	
-	
-	/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("dropdownmenu").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtnmenu')) {
-    var dropdowns = document.getElementsByClassName("dropdown-menu-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-} 
-	
-
-	$(function () {
-
-    $(".messagecolor").each(function() {
-		var el = $(this);
-        var value = parseFloat(el.text());
-        if (value > 0) {
-            /*el.css({
-            "color": "white",
-            "background-color": "rgb(186,57,57)",
-        });*/
-			el.addClass('messagecolor-colored');
-        } else {
-            el.css("background", "#383838");
-        }
-    }); 
-});
-</script>
-<!-- end: header_welcomeblock_guest --><div style="float: right;"></div></div>
-<div class="responsivehide" style="height:90px"></div>
-<div class="responsiveshow" style="height:60px"></div>
+<!-- Space for fixed header -->
+<!-- Space for fixed header -->
+<!-- Space for fixed header -->
 <!--<div class="darkerbelow"></div>-->
 <div id="fullcontainment">
 <div class="wraps">
@@ -860,6 +602,5 @@ window.onclick = function(event) {
 </form></div>
 </div>
 </div>
-
 <!-- CF beacon removed for offline use -->
-</body></html><!-- end: reputation -->
+</div></div></body></html><!-- end: reputation -->

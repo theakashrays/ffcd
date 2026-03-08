@@ -4,9 +4,12 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js"
+        "start": "node server.js",
+        "push": "node scripts/push-to-github.js",
+        "push:py": "python scripts/push_to_github.py"
     },
     "dependencies": {
-        "express": "^4.18.2"
+        "express": "^4.18.2",
+        "nodemailer": "^6.9.11"
     }
 }

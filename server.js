@@ -62,6 +62,72 @@ app.post('/api/delete_profile', checkAuth, (req, res) => {
     }
 });
 
+app.get('/api/messages', (req, res) => {
+    const messagesPath = path.join(__dirname, 'messages.json');
+    fs.readFile(messagesPath, 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).json({ error: 'Failed to read messages' });
+        }
+        res.json(JSON.parse(data));
+    });
+});
+
+let nodemailer;
+try {
+    nodemailer = require('nodemailer');
+} catch (e) {
+    console.warn("Nodemailer not installed locally. Email sending will be bypassed.");
+}
+
+app.post('/api/messages', (req, res) => {
+    const messagesPath = path.join(__dirname, 'messages.json');
+    fs.readFile(messagesPath, 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).json({ error: 'Failed to read messages' });
+        }
+        const messages = JSON.parse(data);
+        const newMsg = req.body;
+        messages.push(newMsg);
+
+        fs.writeFile(messagesPath, JSON.stringify(messages, null, 4), 'utf8', (err) => {
+            if (err) {
+                return res.status(500).json({ error: 'Failed to save message' });
+            }
+
+            // Immediately send back success so the frontend UI doesn't hang waiting for slow SMTP servers
+            res.json({ success: true });
+
+            // Attempt to send email asynchronously if receiver looks like an email address
+            if (nodemailer && newMsg.receiver && newMsg.receiver.includes('@')) {
+                (async () => {
+                    try {
+                        const transporter = nodemailer.createTransport({
+                            host: process.env.SMTP_HOST || 'smtp.gmail.com',
+                            port: process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : 587,
+                            secure: process.env.SMTP_SECURE === 'true',
+                            auth: {
+                                user: process.env.SMTP_USER,
+                                pass: process.env.SMTP_PASS
+                            }
+                        });
+
+                        await transporter.sendMail({
+                            from: `"${newMsg.sender}" <${process.env.SMTP_USER}>`,
+                            replyTo: newMsg.sender.includes('@') ? newMsg.sender : undefined,
+                            to: newMsg.receiver,
+                            subject: `New Profile Message from ${newMsg.sender}`,
+                            text: `You have received a new message via your OGU offline profile.\n\nSender: ${newMsg.sender}\nTime: ${new Date(newMsg.timestamp).toLocaleString()}\n\nMessage:\n${newMsg.text}`
+                        });
+                        console.log(`Email successfully routed to ${newMsg.receiver}`);
+                    } catch (emailErr) {
+                        console.error("Failed to send email. Check SMTP configuration in environment variables:", emailErr.message);
+                    }
+                })();
+            }
+        });
+    });
+});
+
 app.get('/api/list_profiles', checkAuth, (req, res) => {
     const exclude = [
         'index.html', 'login.html', 'register.html', 'privacy_policy.html',
