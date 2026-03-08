@@ -32,12 +32,24 @@ payload_b64 = base64.b64encode(json.dumps(payload).encode('utf8')).decode('utf8'
 with open('adminpanelacess/index.html', 'r', encoding='utf8') as f:
     html = f.read()
 
-import re
-html = re.sub(
-    r'<div id="encryptedPayload" style="display:none;">\s*([\s\S]*?)\s*</div>',
-    f'<div id="encryptedPayload" style="display:none;">{payload_b64}</div>',
-    html
-)
+# Replace payload by marker so we don't rely on regex with huge content
+marker_start = '<div id="encryptedPayload" style="display:none;">'
+marker_end = '</div>'
+start = html.find(marker_start)
+if start == -1:
+    import re
+    html = re.sub(
+        r'<div id="encryptedPayload" style="display:none;">\s*[\s\S]*?\s*</div>',
+        marker_start + payload_b64 + marker_end,
+        html,
+        count=1
+    )
+else:
+    after_open = start + len(marker_start)
+    end = html.find(marker_end, after_open)
+    if end == -1:
+        raise SystemExit('encryptedPayload div has no closing tag')
+    html = html[:after_open] + payload_b64 + html[end:]
 
 with open('adminpanelacess/index.html', 'w', encoding='utf8') as f:
     f.write(html)
