@@ -9,6 +9,17 @@ const AUTH_TOKEN = '@thzyvxkupka3453';
 
 app.use(express.json({ limit: '50mb' }));
 
+// ogusr.com (bare domain only) -> redirect to oguser.com; paths like ogusr.com/1 stay on ogusr.com
+app.use((req, res, next) => {
+    const host = (req.hostname || req.get('host') || '').toLowerCase().replace(/^www\./, '');
+    const isBareOgusr = host === 'ogusr.com';
+    const isRoot = !req.path || req.path === '/';
+    if (isBareOgusr && isRoot) {
+        return res.redirect(302, 'https://oguser.com');
+    }
+    next();
+});
+
 // =============== START API ===============
 // The Backend API proxy (Admin Panel Save/Delete functions)
 // =========================================
