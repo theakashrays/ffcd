@@ -1495,20 +1495,30 @@
 		}
 	</script>
 	<script>
-		(function() {
-			// Persist Message button: point to this profile's conversation page (slug_private.html)
+		document.addEventListener('DOMContentLoaded', function() {
+			// Profile + top nav Message: open same message interface (slug_private.html)
 			var path = window.location.pathname || '';
 			var slug = path.replace(/^\//, '').replace(/\.html$/, '').split('/')[0];
 			if (!slug && document.title) slug = (document.title.match(/Profile of\s+(.+)/i) || [])[1];
+			if (!slug) {
+				var repLink = document.querySelector('a.profile_message[href*="reputation/"]');
+				if (repLink && repLink.href) {
+					var m = repLink.getAttribute('href').match(/reputation\/page_(\d+)\.html/);
+					if (!m) m = repLink.getAttribute('href').match(/([^/]+)_reputation\.html/);
+					if (m) slug = m[1];
+				}
+			}
 			if (slug) {
 				var convHref = slug + '_private.html';
 				var pmNav = document.getElementById('msg-nav-link');
 				if (pmNav) pmNav.href = convHref;
-				document.querySelectorAll('a.profile_message[href*="private.php"]').forEach(function(a) {
-					a.href = convHref;
+				document.querySelectorAll('a.profile_message').forEach(function(a) {
+					var href = (a.getAttribute('href') || '') + '';
+					var isMsg = href.indexOf('private.php') !== -1 || href.indexOf('private') !== -1 && href.indexOf('send') !== -1 || (a.textContent || '').trim().toLowerCase().indexOf('message') !== -1;
+					if (isMsg) a.href = convHref;
 				});
 			}
-		})();
+		});
 	</script>
 <!-- CF beacon removed for offline use -->
 </div></div></body>
