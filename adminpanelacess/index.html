@@ -767,12 +767,14 @@
                 failedAttempts = 0;
 
                 // Split HTML and script by string so the parser never sees <script> and cannot truncate the form
-                const scriptStart = fullHtml.indexOf('<script');
+                const scriptTagOpen = '<script';
+                const scriptTagClose = '</scr' + 'ipt>';
+                const scriptStart = fullHtml.indexOf(scriptTagOpen);
                 const htmlPart = scriptStart >= 0 ? fullHtml.slice(0, scriptStart).trim() : fullHtml;
                 let scriptContent = '';
                 if (scriptStart >= 0) {
                     const openEnd = fullHtml.indexOf('>', scriptStart) + 1;
-                    const scriptEnd = fullHtml.indexOf('</script>', openEnd);
+                    const scriptEnd = fullHtml.indexOf(scriptTagClose, openEnd);
                     scriptContent = scriptEnd >= 0 ? fullHtml.slice(openEnd, scriptEnd) : '';
                 }
 
