@@ -5,14 +5,14 @@
     ],
     "exclude": [
         "/assets/*",
-        "/index.html",
-        "/adminpanelacess/*",
         "/*.css",
         "/*.js",
         "/*.png",
         "/*.jpg",
         "/*.gif",
         "/*.ico",
-        "/*.svg"
+        "/*.svg",
+        "/*.woff2",
+        "/*.woff"
     ]
 }

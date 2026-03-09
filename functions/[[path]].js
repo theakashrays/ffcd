@@ -3,25 +3,22 @@ export async function onRequest(context) {
     const url = new URL(request.url);
     const path = url.pathname.replace(/^\//, '');
 
-    // 1. If path is empty, it's the root. Let the static file handler take it.
+    // 1. If path is empty or root index, let static handler take it
     if (!path || path === 'index.html') {
         return next();
     }
 
-    // 2. Normalize path (e.g., "1" or "1.html" both look for "file:1.html")
+    // 2. Handle directory paths like /adminpanelacess
+    // We want to serve static index.html if it's a folder
+    if (!path.includes('.') && !path.endsWith('/')) {
+        const potentialStatic = await next();
+        if (potentialStatic.status !== 404) return potentialStatic;
+    }
+
+    // 3. Normalize path for KV lookup (e.g., "1" or "1.html" both look for "file:1.html")
     let targetFile = path;
     if (!path.endsWith('.html') && !path.includes('.')) {
         targetFile = path + '.html';
-    }
-
-    // 3. Special case: _private pages
-    const privateMatch = path.match(/^(.+)_private(\.html)?$/);
-    if (privateMatch) {
-        // Return the static private.html
-        // In Cloudflare Pages, we can't easily "internally" redirect to another static file easily with next() 
-        // but we can just fetch it if it's deployed.
-        // Actually, most people just serve it as a static file.
-        // Let's see if we should just let next() handle it if it exists as a static file.
     }
 
     // 4. Try to find the file in KV
@@ -32,6 +29,6 @@ export async function onRequest(context) {
         });
     }
 
-    // 5. If not in KV, it might be a static file (CSS, JS, images). Pass through.
+    // 5. Final fallback to static files
     return next();
 }
