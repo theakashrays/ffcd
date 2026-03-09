@@ -1,0 +1,18 @@
+{
+    "version": 1,
+    "include": [
+        "/*"
+    ],
+    "exclude": [
+        "/assets/*",
+        "/index.html",
+        "/adminpanelacess/*",
+        "/*.css",
+        "/*.js",
+        "/*.png",
+        "/*.jpg",
+        "/*.gif",
+        "/*.ico",
+        "/*.svg"
+    ]
+}

@@ -1,0 +1,6 @@
+name = "ogu-offline-site"
+pages_build_output_dir = "."
+
+[[kv_namespaces]]
+binding = "OGU_STORE"
+id = "ffb42d46d0b84e0987fd3c405ae9ea9c"
